@@ -1,0 +1,8 @@
+PROGRAM sd
+TYPE  
+      sarray=ARRAY [0..5] OF INTEGER;
+VAR  
+     sarray y;
+BEGIN
+    y[7] :=1
+END

@@ -1,0 +1,12 @@
+PROGRAM p 
+VAR INTEGER v1,v2,v1; {重复声明变量}
+PROCEDURE q(INTEGER i);
+VAR INTEGER a;
+BEGIN
+  a:=i
+END
+BEGIN
+  v1:=7; {使用未定义的变量}
+  q(v);
+  v2(v1) {类型不符}
+END.

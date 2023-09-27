@@ -1,0 +1,18 @@
+PROGRAM p
+VAR INTEGER v1,v2;
+ARRAY [1..20] OF INTEGER v3;
+PROCEDURE
+q(INTEGER i);
+VAR INTEGER a;
+BEGIN
+ a:=i
+END
+BEGIN
+ IF v1<10
+THEN v1:=v1+10
+ELSE v1:=v1-10
+FI;
+ q(v3); {形参实参类型不相容}
+ q(); {形参实参个数不匹配}
+ v1()
+END.

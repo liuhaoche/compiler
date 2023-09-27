@@ -1,0 +1,503 @@
+{
+    "Program" : {
+        "production_1" : [
+            "ProgramHead",
+            "DeclarePart",
+            "ProgramBody"
+        ]
+    },
+    "ProgramHead" : {
+        "production_1" : [
+            "PROGRAM",
+            "ProgramName"
+        ]
+    },
+    "ProgramName" : {
+        "production_1" : [
+            "ID"
+        ]
+    },
+    "DeclarePart" : {
+        "production_1" : [
+            "TypeDec",
+            "VarDec",
+            "ProcDec"
+        ]
+    },
+    "TypeDec" : {
+        "production_1" : null,
+        "production_2" : [
+            "TypeDeclaration"
+        ]
+    },
+    "TypeDeclaration" : {
+        "production_1" : [
+            "TYPE",
+            "TypeDecList"
+        ]
+    },
+    "TypeDecList" : {
+        "production_1" : [
+            "TypeId",
+            "=",
+            "TypeName",
+            ";",
+            "TypeDecMore"
+        ]
+    },
+    "TypeDecMore" : {
+        "production_1" : null,
+        "production_2" : [
+            "TypeDecList"
+        ]
+    },
+    "TypeId" : {
+        "production_1" : [
+            "ID"
+        ]
+    },
+    "TypeName" : {
+        "production_1" : [
+            "BaseType"
+        ],
+        "production_2" : [
+            "StructureType"
+        ],
+        "production_3" : [
+            "ID"
+        ]
+    },
+    "BaseType" : {
+        "production_1" : [
+            "INTEGER"
+        ],
+        "production_2" : [
+            "CHAR"
+        ]
+    },
+    "StructureType" : {
+        "production_1" : [
+            "ArrayType"
+        ],
+        "production_2" : [
+            "RecType"
+        ]
+    },
+    "ArrayType" : {
+        "production_1" : [
+            "ARRAY",
+            "[",
+            "Low",
+            "..",
+            "Top",
+            "]",
+            "OF",
+            "BaseType"
+        ]
+    },
+    "Low" : {
+        "production_1" : [
+            "INTC"
+        ]
+    },
+    "Top" : {
+        "production_1" : [
+            "INTC"
+        ]
+    },
+    "RecType" : {
+        "production_1" : [
+            "RECORD",
+            "FieldDecList",
+            "END"
+        ]
+    },
+    "FieldDecList" : {
+        "production_1" : [
+            "BaseType",
+            "IdList",
+            ";",
+            "FieldDecMore"
+        ],
+        "production_2" : [
+            "ArrayType",
+            "IdList",
+            ";",
+            "FieldDecMore"
+        ]
+    },
+    "FieldDecMore" : {
+        "production_1" : null,
+        "production_2" : [
+            "FieldDecList"
+        ]
+    },
+    "IdList" : {
+        "production_1" : [
+            "ID",
+            "IdMore"
+        ]
+    },
+    "IdMore" : {
+        "production_1" : null,
+        "production_2" : [
+            ",",
+            "IdList"
+        ]
+    },
+    "VarDec" : {
+        "production_1" : null,
+        "production_2" : [
+            "VarDeclaration"
+        ]
+    },
+    "VarDeclaration" : {
+        "production_1" : [
+            "VAR",
+            "VarDecList"
+        ]
+    },
+    "VarDecList" : {
+        "production_1" : [
+            "TypeName",
+            "VarIdList",
+            ";",
+            "VarDecMore"
+        ]
+    },
+    "VarDecMore" : {
+        "production_1" : null,
+        "production_2" : [
+            "VarDecList"
+        ]
+    },
+    "VarIdList" : {
+        "production_1" : [
+            "ID",
+            "VarIdMore"
+        ]
+    },
+    "VarIdMore" : {
+        "production_1" : null,
+        "production_2" : [
+            ",",
+            "VarIdList"
+        ]
+    },
+    "ProcDec" : {
+        "production_1" : null,
+        "production_2" : [
+            "ProcDeclaration"
+        ]
+    },
+    "ProcDeclaration" : {
+        "production_1" : [
+            "PROCEDURE",
+            "ProcName",
+            "(",
+            "ParamList",
+            ")",
+            ";",
+            "ProcDecPart",
+            "ProcBody",
+            "ProcDecMore"
+        ]
+    },
+    "ProcDecMore" : {
+        "production_1" : null,
+        "production_2" : [
+            "ProcDeclaration"
+        ]
+    },
+    "ProcName" : {
+        "production_1" : [
+            "ID"
+        ]
+    },
+    "ParamList" : {
+        "production_1" : null,
+        "production_2" : [
+            "ParamDecList"
+        ]
+    },
+    "ParamDecList" : {
+        "production_1" : [
+            "Param",
+            "ParamMore"
+        ]
+    },
+    "ParamMore" : {
+        "production_1" : null,
+        "production_2" : [
+            ";",
+            "ParamDecList"
+        ]
+    },
+    "Param" : {
+        "production_1" : [
+            "TypeName",
+            "FormList"
+        ],
+        "production_2" : [
+            "VAR",
+            "TypeName",
+            "FormList"
+        ]
+    },
+    "FormList" : {
+        "production_1" : [
+            "ID",
+            "FidMore"
+        ]
+    },
+    "FidMore" : {
+        "production_1" : null,
+        "production_2" : [
+            ",",
+            "FormList"
+        ]
+    },
+    "ProcDecPart" : {
+        "production_1" : [
+            "DeclarePart"
+        ]
+    },
+    "ProcBody" : {
+        "production_1" : [
+            "ProgramBody"
+        ]
+    },
+    "ProgramBody" : {
+        "production_1" : [
+            "BEGIN",
+            "StmList",
+            "END"
+        ]
+    },
+    "StmList" : {
+        "production_1" : [
+            "Stm",
+            "StmMore"
+        ]
+    },
+    "StmMore" : {
+        "production_1" : null,
+        "production_2" : [
+            ";",
+            "StmList"
+        ]
+    },
+    "Stm" : {
+        "production_1" : [
+            "ConditionalStm"
+        ],
+        "production_2" : [
+            "LoopStm"
+        ],
+        "production_3" : [
+            "InputStm"
+        ],
+        "production_4" : [
+            "OutputStm"
+        ],
+        "production_5" : [
+            "ReturnStm"
+        ],
+        "production_6" : [
+            "ID",
+            "AssCall"
+        ]
+    },
+    "AssCall" : {
+        "production_1" : [
+            "AssignmentRest"
+        ],
+        "production_2" : [
+            "CallStmRest"
+        ]
+    },
+    "AssignmentRest" : {
+        "production_1" : [
+            "VariMore",
+            ":=",
+            "Exp"
+        ]
+    },
+    "ConditionalStm" : {
+        "production_1" : [
+            "IF",
+            "RelExp",
+            "THEN",
+            "StmList",
+            "ELSE",
+            "StmList",
+            "FI"
+        ]
+    },
+    "LoopStm" : {
+        "production_1" : [
+            "WHILE",
+            "RelExp",
+            "DO",
+            "StmList",
+            "ENDWH"
+        ]
+    },
+    "InputStm" : {
+        "production_1" : [
+            "READ",
+            "(",
+            "Invar",
+            ")"
+        ]
+    },
+    "Invar" : {
+        "production_1" : [
+            "ID"
+        ]
+    },
+    "OutputStm" : {
+        "production_1" : [
+            "WRITE",
+            "(",
+            "Exp",
+            ")"
+        ]
+    },
+    "ReturnStm" : {
+        "production_1" : [
+            "RETURN",
+            "(",
+            "Exp",
+            ")"
+        ]
+    },
+    "CallStmRest" : {
+        "production_1" : [
+            "(",
+            "ActParamList",
+            ")"
+        ]
+    },
+    "ActParamList" : {
+        "production_1" : null,
+        "production_2" : [
+            "Exp",
+            "ActParamMore"
+        ]
+    },
+    "ActParamMore" : {
+        "production_1" : null,
+        "production_2" : [
+            ",",
+            "ActParamList"
+        ]
+    },
+    "RelExp" : {
+        "production_1" : [
+            "Exp",
+            "OtherRelE"
+        ]
+    },
+    "OtherRelE" : {
+        "production_1" : [
+            "CmpOp",
+            "Exp"
+        ]
+    },
+    "Exp" : {
+        "production_1" : [
+            "Term",
+            "OtherTerm"
+        ]
+    },
+    "OtherTerm" : {
+        "production_1" : null,
+        "production_2" : [
+            "AddOp",
+            "Exp"
+        ]
+    },
+    "Term" : {
+        "production_1" : [
+            "Factor",
+            "OtherFactor"
+        ]
+    },
+    "OtherFactor" : {
+        "production_1" : null,
+        "production_2" : [
+            "MultOp",
+            "Term"
+        ]
+    },
+    "Factor" : {
+        "production_1" : [
+            "(",
+            "Exp",
+            ")"
+        ],
+        "production_2" : [
+            "INTC"
+        ],
+        "production_3" : [
+            "Variable"
+        ]
+    },
+    "Variable" : {
+        "production_1" : [
+            "ID",
+            "VariMore"
+        ]
+    },
+    "VariMore" : {
+        "production_1" : null,
+        "production_2" : [
+            "[",
+            "Exp",
+            "]"
+        ],
+        "production_3" : [
+            ".",
+            "FieldVar"
+        ]
+    },
+    "FieldVar" : {
+        "production_1" : [
+            "ID",
+            "FieldVarMore"
+        ]
+    },
+    "FieldVarMore" : {
+        "production_1" : null,
+        "production_2" : [
+            "[",
+            "Exp",
+            "]"
+        ]
+    },
+    "CmpOp" : {
+        "production_1" : [
+            "<"
+        ],
+        "production_2" : [
+            "="
+        ]
+    },
+    "AddOp" : {
+        "production_1" : [
+            "+"
+        ],
+        "production_2" : [
+            "-"
+        ]
+    },
+    "MultOp" : {
+        "production_1" : [
+            "*"
+        ],
+        "production_2" : [
+            "/"
+        ]
+    }
+}

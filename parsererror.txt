@@ -1,0 +1,44 @@
+PROGRAM  p
+TYPE MyRecord = RECORD INTEGER i, j; ARRAY[2..30] OF CHAR a1; END;
+VAR  INTEGER  i,j,num;
+      ARRAY[1..20] OF  INTEGER a;
+	MyRecord r1
+PROCEDURE  q(INTEGER num);
+VAR  INTEGER i,j,k;
+     INTEGER t;
+BEGIN
+  i:=1;
+  j:=1;
+  WHILE i < num DO
+     j:=num-i+1;
+     :=1;
+     WHILE k<j  DO
+    	 IF a[k+1] < a[k]  
+         THEN  t:=a[k];
+	       a[k]:=a[k+1];
+	       a[k+1]:=t
+         ELSE  t:=0
+         FI;   
+     k:=k+1
+     ENDWH;
+  i:=i+1
+  ENDWH
+END
+
+BEGIN
+   r1.a[] := 4;
+   READ(num);
+   i:=1;
+   WHILE i<(num+1)  DO
+     READ(j);
+     a[i]:=j;
+     i:=i+1
+   ENDWH;
+   q(num);
+   i:=1;
+   WHILE  i<(num+1) DO 
+       WRITE(a[i]);
+       i:=i+1
+   ENDWH
+END
+END

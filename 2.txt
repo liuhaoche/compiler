@@ -1,0 +1,16 @@
+PROGRAM p
+TYPE t1 = INTEGER;
+VAR INTEGER v1,v2;
+CHAR V3;
+ARRAY [1..20] OF INTEGER a;
+ARRAY [10..1] OF INTEGER b; {数组越界}
+PROCEDURE
+q(INTEGER i);
+BEGIN
+ a:=i {赋值语句左右两边类型不兼容}
+ 
+END
+BEGIN
+ a[v3]:=v1; {数组引用非法}
+ p:=2 {赋值左侧不是变量}
+END.

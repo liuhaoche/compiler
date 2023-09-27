@@ -1,0 +1,8 @@
+PROGRAM p
+VAR INTEGER i, j, k_idf; {note1}
+BEGIN
+	i := 1f;		note2}
+	j := 34;		
+	k & 1;
+{note2
+END

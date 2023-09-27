@@ -1,0 +1,15 @@
+PROGRAM p 
+VAR INTEGER v1,v2; 
+ARRAY [1..20] OF INTEGER v3; 
+PROCEDURE
+q(INTEGER i);
+VAR INTEGER a;
+BEGIN
+ a:=i
+END
+BEGIN
+ IF v1<v3 {不是bool表达式}
+THEN v1:=v1+v3 {操作符两端类型不兼容}
+ELSE v1:=v1-10
+FI
+END.
